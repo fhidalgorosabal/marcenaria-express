@@ -1,13 +1,27 @@
-function App() {
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/layout/Header";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import Login from "./pages/Login";
+import { ROUTES } from "./lib/constants";
+import "./styles/global.css";
 
+function App() {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">¡Bienvenido a tu App!</h1>
-        <p className="text-gray-600">TailwindCSS está configurado correctamente.</p>
+    <Router>
+      <div className="min-h-screen bg-gray-50">
+        <Header />
+        <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+          <Routes>
+            <Route path={ROUTES.HOME} element={<Home />} />
+            <Route path={ROUTES.PRODUCTS} element={<Products />} />
+            <Route path={ROUTES.LOGIN} element={<Login />} />
+            <Route path={ROUTES.REGISTER} element={<div>Register Page</div>} />
+          </Routes>
+        </main>
       </div>
-    </div>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;

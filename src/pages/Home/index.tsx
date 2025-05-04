@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import { ROUTES } from "../../lib/constants";
-import "../../styles/pages/home.css";
+import Button from "../../components/common/Button";
+import "../../styles/home.css";
 
 const Home = () => {
   return (
@@ -10,19 +10,20 @@ const Home = () => {
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         </div>
         <div className="relative h-screen flex items-center justify-center">
-          <div className="text-center text-white max-w-3xl px-4">
-            <h1 className="text-5xl font-bold mb-6">
-              BIENVENIDO A MARCENARIA EXPRESS
+          <div className="text-center max-w-3xl px-4">
+            <h1 className="text-5xl text-gray-300 font-bold mb-6">
+              BIENVENIDO A <br /> MARCENARIA EXPRESS
             </h1>
-            <p className="text-2xl mb-8">
+            <p className="text-2xl text-white mb-8">
               Descubre nuestra colección de muebles artesanales
             </p>
-            <Link
-              to={ROUTES.PRODUCTS}
-              className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold"
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={() => (window.location.href = ROUTES.PRODUCTS)}
             >
               Ver Productos
-            </Link>
+            </Button>
           </div>
         </div>
       </div>

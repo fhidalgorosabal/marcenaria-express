@@ -1,16 +1,12 @@
 import React from "react";
+import { ButtonType } from "../../types/ButtonType";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "success" | "outline";
-  size?: "sm" | "md" | "lg" | "xl";
-  isLoading?: boolean;
-}
-
-const Button: React.FC<ButtonProps> = ({
+const Button: React.FC<ButtonType> = ({
   children,
   variant = "primary",
   size = "md",
   isLoading = false,
+  isScrolled = false,
   className = "",
   ...props
 }) => {
@@ -21,8 +17,9 @@ const Button: React.FC<ButtonProps> = ({
     primary: "bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500",
     secondary: "bg-gray-600 text-white hover:bg-gray-700 focus:ring-gray-500",
     success: "bg-green-600 text-white hover:bg-green-700 focus:ring-green-500",
-    outline:
-      "border border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-blue-500",
+    outline: isScrolled
+      ? "border border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-blue-500"
+      : "border border-white/30 text-white hover:bg-white/10 focus:ring-white",
   };
 
   const sizes = {

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../lib/constants";
 import { useAuth } from "../../hooks/useAuth";
+import Button from "../common/Button";
 
 const NavBar: React.FC = () => {
   const { isAuthenticated, logout } = useAuth();
@@ -58,7 +59,7 @@ const NavBar: React.FC = () => {
                 className={`text-xl font-bold transition-colors ${
                   isScrolled || !isScrollPage
                     ? "text-gray-700 hover:text-gray-600"
-                    : "text-white hover:text-gray-300"
+                    : "text-gray-400 hover:text-gray-300"
                 }`}
               >
                 MARCENARIA EXPRESS
@@ -71,7 +72,7 @@ const NavBar: React.FC = () => {
                   isActive(ROUTES.HOME)
                     ? isScrolled || !isScrollPage
                       ? "border-blue-500 text-gray-900"
-                      : "border-gray-200 text-white"
+                      : "border-gray-300 text-white"
                     : isScrolled || !isScrollPage
                     ? "border-transparent text-gray-700 hover:border-gray-600 hover:text-gray-600"
                     : "border-transparent text-gray-400 hover:border-gray-300 hover:text-gray-300"
@@ -87,7 +88,7 @@ const NavBar: React.FC = () => {
                   isActive(ROUTES.PRODUCTS)
                     ? isScrolled || !isScrollPage
                       ? "border-blue-500 text-gray-900"
-                      : "border-gray-200 text-white"
+                      : "border-gray-300 text-white"
                     : isScrolled || !isScrollPage
                     ? "border-transparent text-gray-700 hover:border-gray-600 hover:text-gray-600"
                     : "border-transparent text-gray-400 hover:border-gray-300 hover:text-gray-300"
@@ -98,17 +99,22 @@ const NavBar: React.FC = () => {
             </div>
           </div>
           <div className="hidden sm:ml-6 sm:flex sm:items-center">
-            {isAuthenticated && (
-              <button
+            {isAuthenticated ? (
+              <Button
                 onClick={handleLogout}
-                className={`px-4 py-2 rounded transition-colors ${
-                  isScrolled || !isScrollPage
-                    ? "bg-white/50 text-gray-700 hover:bg-white/80"
-                    : "bg-white/20 text-white hover:bg-white/30"
-                }`}
+                variant="outline"
+                isScrolled={isScrolled || !isScrollPage}
               >
                 Cerrar sesión
-              </button>
+              </Button>
+            ) : (
+              <Button
+                onClick={() => navigate(ROUTES.LOGIN)}
+                variant="outline"
+                isScrolled={isScrolled || !isScrollPage}
+              >
+                {!isActive(ROUTES.LOGIN) ? "Iniciar sesión" : "Registrarse"}
+              </Button>
             )}
           </div>
         </div>

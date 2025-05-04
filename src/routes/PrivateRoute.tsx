@@ -5,7 +5,7 @@ const PrivateRoute = () => {
   const { isAuthenticated, isLoading } = useAuth();
 
   if (isLoading) {
-    return <div>Cargando...</div>; // O tu componente de carga
+    return <div>Cargando...</div>;
   }
 
   if (!isAuthenticated) {

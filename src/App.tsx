@@ -8,7 +8,7 @@ function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-gray-100">
           <NavBar />
           <main className="max-w-7xl mx-auto">
             <AppRoutes />

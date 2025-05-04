@@ -16,6 +16,8 @@ const NavBar: React.FC = () => {
       return;
     }
 
+    setIsScrolled(false);
+
     const handleScroll = () => {
       if (window.scrollY > 0) {
         setIsScrolled(true);
@@ -26,7 +28,7 @@ const NavBar: React.FC = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isScrollPage]);
+  }, [isScrollPage, location.pathname]);
 
   const isActive = (path: string) => {
     return location.pathname === path;

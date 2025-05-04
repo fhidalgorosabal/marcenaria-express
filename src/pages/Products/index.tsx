@@ -1,40 +1,25 @@
-import { formatPrice } from "../../lib/utils";
-import Button from "../../components/common/Button";
+import Card from "../../components/common/Card";
 import { DataProducts } from "../../data/products";
 
 const Products = () => {
   return (
-    <div className="container mx-auto px-4 pt-24 pb-10">
-      <h1 className="text-3xl font-bold text-gray-600 mb-8">
-        Nuestros Productos
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {DataProducts.map((product) => (
-          <div
-            key={product.id}
-            className="bg-white rounded-lg shadow-md overflow-hidden"
-          >
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold text-gray-800 mb-2">
-                {product.name}
-              </h2>
-              <p className="text-gray-600 mb-4">{product.description}</p>
-              <div className="flex justify-between items-center">
-                <span className="text-lg font-bold text-blue-600">
-                  {formatPrice(product.price)}
-                </span>
-                <Button variant="success" size="sm">
-                  Agregar al carrito
-                </Button>
-              </div>
+    <div className="min-h-screen bg-gray-100 pt-24 pb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="text-3xl font-bold text-gray-900 mb-8">
+          Nuestros Productos
+        </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {DataProducts.map((product) => (
+            <div key={product.id} className="h-[400px]">
+              <Card
+                title={product.name}
+                description={product.description}
+                imageUrl={product.image}
+                price={product.price}
+              />
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

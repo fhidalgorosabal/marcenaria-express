@@ -19,7 +19,7 @@ const Home = () => {
             </p>
             <Button
               variant="outline"
-              size="lg"
+              size="xl"
               onClick={() => (window.location.href = ROUTES.PRODUCTS)}
             >
               Ver Productos

@@ -25,8 +25,8 @@ const Button: React.FC<ButtonType> = ({
   const sizes = {
     sm: "px-3 py-1.5 text-sm",
     md: "px-4 py-2 text-base",
-    lg: "px-6 py-3 text-lg",
-    xl: "w-full px-3 py-2 text-lg",
+    lg: "w-full px-1 py-1 text-lg",
+    xl: "w-full px-3 py-2 text-xl",
   };
 
   return (

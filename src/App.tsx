@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./lib/providers/AuthProvider";
-import Header from "./components/layout/Header";
+import NavBar from "./components/layout/NavBar";
 import AppRoutes from "./routes";
 import "./styles/global.css";
 
@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <div className="min-h-screen bg-gray-50">
-          <Header />
+          <NavBar />
           <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
             <AppRoutes />
           </main>

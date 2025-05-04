@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../lib/constants";
 import { useAuth } from "../../hooks/useAuth";
 
-const Header: React.FC = () => {
+const NavBar: React.FC = () => {
   const { isAuthenticated, logout } = useAuth();
   const location = useLocation();
 
@@ -19,7 +19,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="bg-white shadow-sm">
+    <header className="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
@@ -72,4 +72,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export default NavBar;

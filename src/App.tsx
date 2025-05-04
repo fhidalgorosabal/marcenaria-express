@@ -10,7 +10,7 @@ function App() {
       <AuthProvider>
         <div className="min-h-screen bg-gray-50">
           <NavBar />
-          <main className="max-w-7xl mx-auto py-6">
+          <main className="max-w-7xl mx-auto">
             <AppRoutes />
           </main>
         </div>

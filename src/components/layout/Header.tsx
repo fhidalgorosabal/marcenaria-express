@@ -1,12 +1,21 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../lib/constants";
+import { useAuth } from "../../hooks/useAuth";
 
 const Header: React.FC = () => {
+  const { isAuthenticated, logout } = useAuth();
   const location = useLocation();
 
   const isActive = (path: string) => {
     return location.pathname === path;
+  };
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate(ROUTES.LOGIN);
   };
 
   return (
@@ -19,7 +28,7 @@ const Header: React.FC = () => {
                 to={ROUTES.HOME}
                 className="text-xl font-bold text-gray-800 hover:text-blue-600 transition-colors"
               >
-                Marcenaria Express
+                MARCENARIA EXPRESS
               </Link>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
@@ -48,16 +57,14 @@ const Header: React.FC = () => {
             </div>
           </div>
           <div className="hidden sm:ml-6 sm:flex sm:items-center">
-            <Link
-              to={ROUTES.LOGIN}
-              className={`inline-flex items-center px-3 py-2 rounded-md text-sm font-medium ${
-                isActive(ROUTES.LOGIN)
-                  ? "bg-blue-100 text-blue-700"
-                  : "text-gray-500 hover:bg-gray-50 hover:text-gray-700"
-              }`}
-            >
-              Iniciar sesión
-            </Link>
+            {isAuthenticated && (
+              <button
+                onClick={handleLogout}
+                className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+              >
+                Cerrar sesión
+              </button>
+            )}
           </div>
         </div>
       </nav>

@@ -1,39 +1,15 @@
-import React from "react";
-import { formatPrice } from "../lib/utils";
+import { formatPrice } from "../../lib/utils";
+import Button from "../../components/common/Button";
+import { DataProducts } from "../../data/products";
 
-// Datos de ejemplo para los productos
-const products = [
-  {
-    id: 1,
-    name: "Mesa de Roble",
-    price: 25000,
-    description: "Mesa de comedor de roble macizo con acabado natural",
-    image: "https://via.placeholder.com/300x200",
-  },
-  {
-    id: 2,
-    name: "Silla de Madera",
-    price: 8000,
-    description: "Silla de madera con tapizado en tela resistente",
-    image: "https://via.placeholder.com/300x200",
-  },
-  {
-    id: 3,
-    name: "Estantería Moderna",
-    price: 15000,
-    description: "Estantería moderna con diseño minimalista",
-    image: "https://via.placeholder.com/300x200",
-  },
-];
-
-const Products: React.FC = () => {
+const Products = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold text-gray-900 mb-8">
         Nuestros Productos
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.map((product) => (
+        {DataProducts.map((product) => (
           <div
             key={product.id}
             className="bg-white rounded-lg shadow-md overflow-hidden"
@@ -52,9 +28,9 @@ const Products: React.FC = () => {
                 <span className="text-lg font-bold text-blue-600">
                   {formatPrice(product.price)}
                 </span>
-                <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                <Button variant="success" size="sm">
                   Agregar al carrito
-                </button>
+                </Button>
               </div>
             </div>
           </div>

@@ -5,5 +5,5 @@ export const ROUTES = {
   LOGIN: "/login",
   REGISTER: "/register",
   PRODUCTS: "/products",
-  USERS: "/users",
+  NOT_FOUND: "*",
 } as const;

@@ -1,104 +1,58 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { ROUTES } from "../../lib/constants";
-import { useAuth } from "../../hooks/useAuth";
+import { useAuth, useScrollBehavior } from "../../hooks";
+import { ROUTES, STYLES_HEADER } from "../../lib/constants";
+import { MobileMenu } from "./MobileMenu";
+import { NavLinks } from "./NavLinks";
 import Button from "../common/Button";
 
-const NavBar: React.FC = () => {
+const NavBar = () => {
   const { isAuthenticated, logout } = useAuth();
   const location = useLocation();
-  const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const isScrollPage =
     location.pathname === ROUTES.HOME || location.pathname === ROUTES.LOGIN;
+  const isScrolled = useScrollBehavior(isScrollPage, isMenuOpen);
 
-  useEffect(() => {
-    if (!isScrollPage) {
-      setIsScrolled(true);
-      return;
-    }
-
-    setIsScrolled(false);
-
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isScrollPage, location.pathname]);
-
-  const isActive = (path: string) => {
-    return location.pathname === path;
-  };
-
-  const navigate = useNavigate();
+  const isActive = (path: string) => location.pathname === path;
 
   const handleLogout = () => {
     logout();
     navigate(ROUTES.LOGIN);
   };
 
+  const handleLogin = () => {
+    navigate(ROUTES.LOGIN);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || !isScrollPage
-          ? "bg-white/60 backdrop-blur-md shadow-lg"
-          : "bg-transparent/20"
-      }`}
-    >
+    <header className={STYLES_HEADER.header(isScrolled, isScrollPage)}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
               <Link
                 to={ROUTES.HOME}
-                className={`text-xl font-bold transition-colors ${
-                  isScrolled || !isScrollPage
-                    ? "text-gray-700 hover:text-gray-600"
-                    : "text-gray-400 hover:text-gray-300"
-                }`}
+                className={STYLES_HEADER.logo(isScrolled, isScrollPage)}
               >
                 MARCENARIA EXPRESS
               </Link>
             </div>
-            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-              <Link
-                to={ROUTES.HOME}
-                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                  isActive(ROUTES.HOME)
-                    ? isScrolled || !isScrollPage
-                      ? "border-blue-500 text-gray-900"
-                      : "border-gray-300 text-white"
-                    : isScrolled || !isScrollPage
-                    ? "border-transparent text-gray-700 hover:border-gray-600 hover:text-gray-600"
-                    : "border-transparent text-gray-400 hover:border-gray-300 hover:text-gray-300"
-                }`}
-              >
-                Inicio
-              </Link>
-            </div>
-            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-              <Link
-                to={ROUTES.PRODUCTS}
-                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                  isActive(ROUTES.PRODUCTS)
-                    ? isScrolled || !isScrollPage
-                      ? "border-blue-500 text-gray-900"
-                      : "border-gray-300 text-white"
-                    : isScrolled || !isScrollPage
-                    ? "border-transparent text-gray-700 hover:border-gray-600 hover:text-gray-600"
-                    : "border-transparent text-gray-400 hover:border-gray-300 hover:text-gray-300"
-                }`}
-              >
-                Productos
-              </Link>
-            </div>
+
+            <NavLinks
+              isActive={isActive}
+              isScrolled={isScrolled}
+              isScrollPage={isScrollPage}
+            />
           </div>
-          <div className="hidden sm:ml-6 sm:flex sm:items-center">
+
+          <div className="hidden md:flex md:items-center md:ml-6">
             {isAuthenticated ? (
               <Button
                 onClick={handleLogout}
@@ -109,7 +63,7 @@ const NavBar: React.FC = () => {
               </Button>
             ) : (
               <Button
-                onClick={() => navigate(ROUTES.LOGIN)}
+                onClick={handleLogin}
                 variant="outline"
                 isScrolled={isScrolled || !isScrollPage}
               >
@@ -117,7 +71,56 @@ const NavBar: React.FC = () => {
               </Button>
             )}
           </div>
+
+          <div className="flex items-center md:hidden">
+            <button
+              onClick={toggleMenu}
+              className={STYLES_HEADER.menuButton(isScrolled, isScrollPage)}
+            >
+              <span className="sr-only">Abrir menú principal</span>
+              {isMenuOpen ? (
+                <svg
+                  className="h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  className="h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
+
+        <MobileMenu
+          isOpen={isMenuOpen}
+          isActive={isActive}
+          isAuthenticated={isAuthenticated}
+          onLogout={handleLogout}
+          onLogin={handleLogin}
+          onClose={() => setIsMenuOpen(false)}
+        />
       </nav>
     </header>
   );

@@ -1,7 +1,11 @@
-import React from "react";
 import { ButtonType } from "../../types/ButtonType";
+import {
+  BUTTON_BASE_STYLES,
+  BUTTON_VARIANTS,
+  BUTTON_SIZES,
+} from "../../lib/constants/StylesButton";
 
-const Button: React.FC<ButtonType> = ({
+const Button = ({
   children,
   variant = "primary",
   size = "md",
@@ -9,30 +13,19 @@ const Button: React.FC<ButtonType> = ({
   isScrolled = false,
   className = "",
   ...props
-}) => {
-  const baseStyles =
-    "rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2";
-
-  const variants = {
-    primary: "bg-sky-600/90 text-white hover:bg-sky-700/90 focus:ring-sky-500",
-    secondary:
-      "bg-stone-500/80 text-white hover:bg-stone-300/80 focus:ring-stone-500",
-    success: "bg-green-600 text-white hover:bg-green-700 focus:ring-green-500",
-    outline: isScrolled
-      ? "border border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-yellow-800"
-      : "border border-white/30 text-white hover:bg-white/10 focus:ring-white",
-  };
-
-  const sizes = {
-    sm: "px-3 py-1.5 text-sm",
-    md: "px-4 py-2 text-base",
-    lg: "w-full px-1 py-1 text-lg",
-    xl: "w-full px-3 py-2 text-xl",
+}: ButtonType) => {
+  const getVariantClass = () => {
+    const variantClass = BUTTON_VARIANTS[variant];
+    return typeof variantClass === "function"
+      ? variantClass(isScrolled)
+      : variantClass;
   };
 
   return (
     <button
-      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
+      className={`${BUTTON_BASE_STYLES} ${getVariantClass()} ${
+        BUTTON_SIZES[size]
+      } ${className}`}
       disabled={isLoading}
       {...props}
     >

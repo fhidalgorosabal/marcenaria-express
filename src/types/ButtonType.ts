@@ -5,3 +5,5 @@ export interface ButtonType
   isLoading?: boolean;
   isScrolled?: boolean;
 }
+
+export type ButtonVariant = "primary" | "secondary" | "success" | "outline";

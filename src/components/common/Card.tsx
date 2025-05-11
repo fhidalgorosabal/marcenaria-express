@@ -31,7 +31,7 @@ const Card = ({
           <p className="text-sm font-bold text-white mt-1">
             {formatPrice(price)}
           </p>
-          <Button className="mt-4" variant="success" size="lg">
+          <Button className="mt-4" variant="secondary" size="lg">
             Ver más
           </Button>
         </div>

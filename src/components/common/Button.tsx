@@ -14,11 +14,12 @@ const Button: React.FC<ButtonType> = ({
     "rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2";
 
   const variants = {
-    primary: "bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500",
-    secondary: "bg-gray-600 text-white hover:bg-gray-700 focus:ring-gray-500",
+    primary: "bg-sky-600/90 text-white hover:bg-sky-700/90 focus:ring-sky-500",
+    secondary:
+      "bg-stone-500/80 text-white hover:bg-stone-300/80 focus:ring-stone-500",
     success: "bg-green-600 text-white hover:bg-green-700 focus:ring-green-500",
     outline: isScrolled
-      ? "border border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-blue-500"
+      ? "border border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-yellow-800"
       : "border border-white/30 text-white hover:bg-white/10 focus:ring-white",
   };
 

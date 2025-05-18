@@ -3,5 +3,6 @@ export const ROUTES = {
   LOGIN: "/login",
   REGISTER: "/register",
   PRODUCTS: "/products",
+  CART: "/cart",
   NOT_FOUND: "*",
 } as const;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth, useScrollBehavior } from "../../hooks";
-import { ROUTES } from "../../constants/routes";
+import { ROUTES } from "../../lib/constants";
 import { STYLES_HEADER } from "../../lib/constants";
 import { MobileMenu } from "./MobileMenu";
 import { NavLinks } from "./NavLinks";

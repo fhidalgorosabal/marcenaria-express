@@ -1,10 +1,17 @@
-import { useContext } from "react";
-import { AuthContext } from "../lib/contexts/AuthContext";
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
+import { AuthState, User } from "../types/AuthType";
 
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (context === undefined) {
-    throw new Error("useAuth must be used within an AuthProvider");
-  }
-  return context;
-};
+export const useAuth = create<AuthState>()(
+  persist(
+    (set) => ({
+      user: null,
+      isAuthenticated: false,
+      login: (user: User) => set({ user, isAuthenticated: true }),
+      logout: () => set({ user: null, isAuthenticated: false }),
+    }),
+    {
+      name: "auth-storage",
+    }
+  )
+);

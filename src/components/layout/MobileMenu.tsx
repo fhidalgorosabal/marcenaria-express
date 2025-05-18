@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ROUTES } from "../../constants/routes";
+import { ROUTES } from "../../lib/constants";
 import { STYLES_HEADER } from "../../lib/constants";
 import { useCart } from "../../hooks/useCart";
 

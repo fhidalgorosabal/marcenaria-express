@@ -1,12 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./useAuth";
-
-interface LoginResponse {
-  success: boolean;
-  token?: string;
-  error?: string;
-}
+import { LoginType } from "../types/LoginType";
 
 export const useLogin = () => {
   const [email, setEmail] = useState("");
@@ -19,7 +14,7 @@ export const useLogin = () => {
   const mockLogin = async (
     email: string,
     password: string
-  ): Promise<LoginResponse> => {
+  ): Promise<LoginType> => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     if (email === "fernan@gmail.com" && password) {
@@ -44,12 +39,12 @@ export const useLogin = () => {
       const response = await mockLogin(email, password);
 
       if (response.success) {
-        const success = await login(response.token as string);
-        if (success) {
-          navigate("/");
-        } else {
-          setError("Error al iniciar sesión");
-        }
+        login({
+          id: "1",
+          email: email,
+          name: "admin",
+        });
+        navigate("/");
       } else {
         setError(response.error || "Credenciales inválidas");
       }

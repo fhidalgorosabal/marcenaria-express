@@ -3,7 +3,7 @@ import {
   BUTTON_BASE_STYLES,
   BUTTON_VARIANTS,
   BUTTON_SIZES,
-} from "../../lib/constants/StylesButton";
+} from "../../lib/constants";
 
 const Button = ({
   children,

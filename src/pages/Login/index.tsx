@@ -1,5 +1,5 @@
 import Banner from "../../components/common/Banner";
-import LoginForm from "../../components/auth/LoginForm";
+import LoginForm from "../../components/features/auth/LoginForm";
 import { useLogin } from "../../hooks/useLogin";
 
 const Login = () => {

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { ROUTES } from "../../lib/constants";
-import { STYLES_HEADER } from "../../lib/constants";
+import { ROUTES } from "../../constants";
+import { STYLES_HEADER } from "../../constants";
 import { useCart } from "../../hooks/useCart";
 
 export const MobileMenu = ({

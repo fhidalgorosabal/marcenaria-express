@@ -1,5 +1,5 @@
 import { useCart } from "../../hooks/useCart";
-import { formatPrice } from "../../lib/utils";
+import { formatPrice } from "../../utils";
 import { CardType } from "../../types/CardType";
 import Button from "./Button";
 

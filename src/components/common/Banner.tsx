@@ -1,5 +1,5 @@
 import { BannerType } from "../../types/BannerType";
-import "../../styles/banner.css";
+import "../../assets/styles/banner.css";
 
 const Banner = ({
   title,

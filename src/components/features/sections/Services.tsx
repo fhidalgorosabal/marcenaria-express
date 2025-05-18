@@ -1,7 +1,7 @@
-import { ServicesDataType } from "../../types/ServicesDataType";
-import "../../styles/services.css";
+import { ServicesDataType } from "../../../types/ServicesDataType";
+import "../../../assets/styles/services.css";
 
-import servicesData from "../../data/services.json";
+import servicesData from "../../../data/services.json";
 
 const Services = () => {
   const services: ServicesDataType = servicesData;

@@ -1,6 +1,6 @@
-import { AboutUsDataType } from "../../types/AboutUsDataType";
+import { AboutUsDataType } from "../../../types/AboutUsDataType";
 
-import aboutUsData from "../../data/about-us.json";
+import aboutUsData from "../../../data/about-us.json";
 
 const AboutUs = () => {
   const data: AboutUsDataType = aboutUsData;

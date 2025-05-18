@@ -1,5 +1,5 @@
 import { useCart } from "../../hooks/useCart";
-import { formatPrice } from "../../lib/utils";
+import { formatPrice } from "../../utils";
 
 const Cart = () => {
   const { cartItems, removeFromCart, updateQuantity } = useCart();

@@ -1,4 +1,4 @@
-import { ButtonVariant } from "../../types/ButtonType";
+import { ButtonVariant } from "../types/ButtonType";
 
 export const BUTTON_BASE_STYLES =
   "rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2";

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ROUTES, STYLES_HEADER } from "../../lib/constants";
+import { ROUTES, STYLES_HEADER } from "../../constants";
 
 export const NavLinks = ({
   isActive,

@@ -1,12 +1,3 @@
-export interface CardType {
-  id: number;
-  title: string;
-  description: string;
-  imageUrl: string;
-  price: number;
-  className?: string;
-}
-
 export interface CartStore {
   cartItems: CartItem[];
   addToCart: (item: Omit<CartItem, "quantity">) => void;
@@ -20,4 +11,13 @@ interface CartItem {
   price: number;
   imageUrl: string;
   quantity: number;
+}
+
+export interface CardType {
+  id: number;
+  title: string;
+  description: string;
+  imageUrl: string;
+  price: number;
+  className?: string;
 }

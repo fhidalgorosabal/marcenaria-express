@@ -1,8 +1,8 @@
-import { ROUTES } from "../../lib/constants";
+import { ROUTES } from "../../constants";
 import Button from "../../components/common/Button";
 import Banner from "../../components/common/Banner";
-import AboutUs from "../../components/sections/AboutUs";
-import Services from "../../components/sections/Services";
+import AboutUs from "../../components/features/sections/AboutUs";
+import Services from "../../components/features/sections/Services";
 import Footer from "../../components/layout/Footer";
 
 const Home = () => {

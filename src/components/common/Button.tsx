@@ -12,6 +12,7 @@ const Button = ({
   isLoading = false,
   isScrolled = false,
   className = "",
+  withCounter = false,
   ...props
 }: ButtonType) => {
   const getVariantClass = () => {
@@ -25,7 +26,7 @@ const Button = ({
     <button
       className={`${BUTTON_BASE_STYLES} ${getVariantClass()} ${
         BUTTON_SIZES[size]
-      } ${className}`}
+      } ${withCounter ? "relative" : ""} ${className}`}
       disabled={isLoading}
       {...props}
     >

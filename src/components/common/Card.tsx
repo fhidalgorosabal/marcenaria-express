@@ -1,18 +1,26 @@
+import { useCart } from "../../hooks/useCart";
 import { formatPrice } from "../../lib/utils";
 import { CardType } from "../../types/CardType";
 import Button from "./Button";
 
 const Card = ({
+  id,
   title,
   description,
   imageUrl,
   price,
   className = "",
 }: CardType) => {
+  const { addToCart } = useCart();
   const shortDescription =
     description && description?.length > 40
       ? `${description.substring(0, 40)}...`
       : description;
+
+  const handleAddToCart = () => {
+    addToCart({ id, title, imageUrl, price });
+  };
+
   return (
     <div
       className={`w-full h-full rounded-lg overflow-hidden relative group ${className}`}
@@ -31,8 +39,13 @@ const Card = ({
           <p className="text-sm font-bold text-white mt-1">
             {formatPrice(price)}
           </p>
-          <Button className="mt-4" variant="secondary" size="lg">
-            Ver más
+          <Button
+            className="mt-4"
+            variant="secondary"
+            size="lg"
+            onClick={handleAddToCart}
+          >
+            Añadir al carrito
           </Button>
         </div>
       </div>

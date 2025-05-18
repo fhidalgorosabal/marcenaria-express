@@ -1,16 +1,20 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth, useScrollBehavior } from "../../hooks";
-import { ROUTES, STYLES_HEADER } from "../../lib/constants";
+import { ROUTES } from "../../constants/routes";
+import { STYLES_HEADER } from "../../lib/constants";
 import { MobileMenu } from "./MobileMenu";
 import { NavLinks } from "./NavLinks";
 import Button from "../common/Button";
+import { useCart } from "../../hooks/useCart";
 
 const NavBar = () => {
   const { isAuthenticated, logout } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { cartItems } = useCart();
+  const itemCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   const isScrollPage =
     location.pathname === ROUTES.HOME || location.pathname === ROUTES.LOGIN;
@@ -25,6 +29,10 @@ const NavBar = () => {
 
   const handleLogin = () => {
     navigate(ROUTES.LOGIN);
+  };
+
+  const handleCart = () => {
+    navigate(ROUTES.CART);
   };
 
   const toggleMenu = () => {
@@ -52,7 +60,22 @@ const NavBar = () => {
             />
           </div>
 
-          <div className="hidden md:flex md:items-center md:ml-6">
+          <div className="hidden md:flex md:items-center md:ml-6 space-x-4">
+            <Button
+              onClick={handleCart}
+              variant="outline"
+              isScrolled={isScrolled || !isScrollPage}
+              withCounter
+              className="relative"
+            >
+              Carrito
+              {itemCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-blue-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  {itemCount}
+                </span>
+              )}
+            </Button>
+
             {isAuthenticated ? (
               <Button
                 onClick={handleLogout}

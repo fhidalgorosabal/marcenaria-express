@@ -1,9 +1,11 @@
-export interface ButtonType
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "success" | "outline";
-  size?: "sm" | "md" | "lg" | "xl";
+import { ButtonHTMLAttributes } from "react";
+
+export interface ButtonType extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: "primary" | "secondary" | "outline";
+  size?: "sm" | "md" | "lg";
   isLoading?: boolean;
   isScrolled?: boolean;
+  withCounter?: boolean;
 }
 
 export type ButtonVariant = "primary" | "secondary" | "success" | "outline";

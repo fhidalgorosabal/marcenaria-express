@@ -1,25 +1,26 @@
 import { Routes, Route } from "react-router-dom";
-import { ROUTES } from "../lib/constants";
+import { ROUTES } from "../constants/routes";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
 import Products from "../pages/Products";
 import NotFound from "../pages/NotFound";
+import Cart from "../pages/Cart";
 
 const AppRoutes = () => {
   return (
     <Routes>
+      <Route path={ROUTES.HOME} element={<Home />} />
+      <Route path={ROUTES.PRODUCTS} element={<Products />} />
+      <Route path={ROUTES.NOT_FOUND} element={<NotFound />} />
       <Route element={<PublicRoute />}>
         <Route path={ROUTES.LOGIN} element={<Login />} />
       </Route>
 
       <Route element={<PrivateRoute />}>
-        <Route path={ROUTES.HOME} element={<Home />} />
-        <Route path={ROUTES.PRODUCTS} element={<Products />} />
+        <Route path={ROUTES.CART} element={<Cart />} />
       </Route>
-
-      <Route path={ROUTES.NOT_FOUND} element={<NotFound />} />
     </Routes>
   );
 };

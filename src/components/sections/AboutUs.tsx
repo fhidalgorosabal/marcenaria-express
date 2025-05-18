@@ -1,21 +1,23 @@
-import { DataAboutUs } from "../../data/about-us";
+import { AboutUsDataType } from "../../types/AboutUsDataType";
+
+import aboutUsData from "../../data/about-us.json";
 
 const AboutUs = () => {
+  const data: AboutUsDataType = aboutUsData;
+
   return (
     <section className="max-w-7xl mx-auto px-4 py-16 min-h-screen flex flex-col justify-center">
       <div className="text-center mb-16">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">
-          {DataAboutUs.title}
-        </h2>
+        <h2 className="text-3xl font-bold text-gray-800 mb-6">{data.title}</h2>
         <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          {DataAboutUs.description}
+          {data.description}
         </p>
       </div>
 
       <div className="flex justify-center">
         <div className="grid grid-flow-col gap-8 auto-cols-max">
-          {DataAboutUs.values.map((value) => (
-            <div className="group relative">
+          {data.values.map((value) => (
+            <div key={value.name} className="group relative">
               <div className="w-48 h-48 mx-auto rounded-full overflow-hidden transition-transform duration-300 group-hover:scale-110 shadow-lg">
                 <img
                   src={value.image}

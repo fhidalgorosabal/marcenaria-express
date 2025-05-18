@@ -1,8 +1,12 @@
 import Card from "../../components/common/Card";
 import Footer from "../../components/layout/Footer";
-import { DataProducts } from "../../data/products";
+import { ProductsDataType } from "../../types/ProductsDataType";
+
+import productsData from "../../data/products.json";
 
 const Products = () => {
+  const products: ProductsDataType[] = productsData;
+
   return (
     <>
       <div className="min-h-screen bg-gray-100 pt-24 pb-10">
@@ -11,7 +15,7 @@ const Products = () => {
             Nuestros Productos
           </h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {DataProducts.map((product) => (
+            {products.map((product) => (
               <div key={product.id} className="h-[400px]">
                 <Card
                   title={product.name}

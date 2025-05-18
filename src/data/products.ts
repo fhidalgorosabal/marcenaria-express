@@ -27,4 +27,32 @@ export const DataProducts = [
     description: "Mueble de cocina negro con 3 puertas y 2 cajones",
     image: "/images/cocina_2.jpeg",
   },
+  {
+    id: 1,
+    name: "Ropero blanco",
+    price: 25000,
+    description: "Ropero blanco con 3 puertas y 2 cajones",
+    image: "/images/ropero_1.jpeg",
+  },
+  {
+    id: 2,
+    name: "Ropero rojo",
+    price: 23200,
+    description: "Ropero rojo con 3 puertas y 2 cajones",
+    image: "/images/ropero_2.jpeg",
+  },
+  {
+    id: 3,
+    name: "Mueble de cocina blanco",
+    price: 15000,
+    description: "Mueble de cocina blanco con 3 puertas y 2 cajones",
+    image: "/images/cocina_1.jpeg",
+  },
+  {
+    id: 4,
+    name: "Mueble de cocina negro",
+    price: 17000,
+    description: "Mueble de cocina negro con 3 puertas y 2 cajones",
+    image: "/images/cocina_2.jpeg",
+  },
 ];

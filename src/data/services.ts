@@ -1,0 +1,20 @@
+export const DataServices = {
+  title: "Nuestros Servicios",
+  services: [
+    {
+      name: "Muebles a Medida",
+      description:
+        "Diseñamos y fabricamos muebles personalizados según tus necesidades y preferencias, asegurando un resultado único y funcional.",
+    },
+    {
+      name: "Restauración",
+      description:
+        "Restauramos muebles antiguos devolviéndoles su esplendor original, preservando su historia y valor sentimental.",
+    },
+    {
+      name: "Asesoría en Diseño",
+      description:
+        "Ofrecemos consultoría profesional para ayudarte a elegir los muebles perfectos para tu espacio.",
+    },
+  ],
+};

@@ -1,0 +1,23 @@
+export const DataAboutUs = {
+  title: "Sobre Nosotros",
+  description:
+    "En Marcenaria Express, nos especializamos en la creación de muebles artesanales de alta calidad. Con más de 15 años de experiencia en el sector, nuestro equipo de artesanos expertos combina técnicas tradicionales con diseños modernos para crear piezas únicas que transforman espacios.",
+  values: [
+    {
+      name: "Calidad artesanal",
+      image: "/public/about-us-1.avif",
+    },
+    {
+      name: "Diseño personalizado",
+      image: "/public/about-us-2.avif",
+    },
+    {
+      name: "Materiales sostenibles",
+      image: "/public/about-us-3.avif",
+    },
+    {
+      name: "Atención al cliente",
+      image: "/public/about-us-4.avif",
+    },
+  ],
+};

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { useAuth } from "../hooks";
 
@@ -5,8 +6,13 @@ const PrivateRoute = () => {
   const { isAuthenticated, setIntendedRoute } = useAuth();
   const location = useLocation();
 
+  useEffect(() => {
+    if (!isAuthenticated) {
+      setIntendedRoute(location.pathname);
+    }
+  }, [isAuthenticated, location.pathname, setIntendedRoute]);
+
   if (!isAuthenticated) {
-    setIntendedRoute(location.pathname);
     return <Navigate to="/login" replace />;
   }
 

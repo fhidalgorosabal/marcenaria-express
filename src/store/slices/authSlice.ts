@@ -1,12 +1,13 @@
-export interface User {
-  id: string;
+export interface LoginData {
   email: string;
-  name: string;
+  password: string;
 }
 
 export interface AuthState {
-  user: User | null;
+  loginData: LoginData | null;
   isAuthenticated: boolean;
-  login: (user: User) => void;
+  intendedRoute: string | null;
+  setIntendedRoute: (route: string | null) => void;
+  login: (loginData: LoginData) => void;
   logout: () => void;
 }

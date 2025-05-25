@@ -5,6 +5,7 @@ import PublicRoute from "./PublicRoute";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
 import Products from "../pages/Products";
+import ProductDetails from "../pages/ProductDetails";
 import Cart from "../pages/Cart";
 import NotFound from "../pages/NotFound";
 
@@ -19,6 +20,7 @@ const AppRoutes = () => {
       </Route>
 
       <Route element={<PrivateRoute />}>
+        <Route path={ROUTES.PRODUCT_DETAILS} element={<ProductDetails />} />
         <Route path={ROUTES.CART} element={<Cart />} />
       </Route>
     </Routes>

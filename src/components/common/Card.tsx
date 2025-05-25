@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
 import { formatPrice } from "../../utils";
 import { CardType } from "../../types/CardType";
@@ -12,18 +13,25 @@ const Card = ({
   className = "",
 }: CardType) => {
   const { addToCart } = useCart();
+  const navigate = useNavigate();
   const shortDescription =
     description && description?.length > 40
       ? `${description.substring(0, 40)}...`
       : description;
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.stopPropagation();
     addToCart({ id, title, imageUrl, price });
+  };
+
+  const handleCardClick = () => {
+    navigate(`/products/${id}`);
   };
 
   return (
     <div
-      className={`w-full h-full rounded-lg overflow-hidden relative group ${className}`}
+      className={`w-full h-full rounded-lg overflow-hidden relative group cursor-pointer ${className}`}
+      onClick={handleCardClick}
     >
       <div className="poster w-full h-full">
         <img

@@ -9,7 +9,7 @@ export const useLogin = () => {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { login, intendedRoute, setIntendedRoute } = useAuth();
 
   const mockLogin = async (
     email: string,
@@ -39,12 +39,9 @@ export const useLogin = () => {
       const response = await mockLogin(email, password);
 
       if (response.success) {
-        login({
-          id: "1",
-          email: email,
-          name: "admin",
-        });
-        navigate("/");
+        await login({ email, password });
+        navigate(intendedRoute || "/");
+        setIntendedRoute(null);
       } else {
         setError(response.error || "Credenciales inválidas");
       }

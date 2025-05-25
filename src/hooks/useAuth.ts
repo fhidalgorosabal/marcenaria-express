@@ -1,14 +1,18 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { AuthState, User } from "../store/slices/authSlice";
+import { AuthState, LoginData } from "../store/slices/authSlice";
 
 export const useAuth = create<AuthState>()(
   persist(
     (set) => ({
-      user: null,
+      loginData: null,
       isAuthenticated: false,
-      login: (user: User) => set({ user, isAuthenticated: true }),
-      logout: () => set({ user: null, isAuthenticated: false }),
+      intendedRoute: null,
+      setIntendedRoute: (route: string | null) => set({ intendedRoute: route }),
+      login: (loginData: LoginData) =>
+        set({ loginData, isAuthenticated: true }),
+      logout: () =>
+        set({ loginData: null, isAuthenticated: false, intendedRoute: null }),
     }),
     {
       name: "auth-storage",

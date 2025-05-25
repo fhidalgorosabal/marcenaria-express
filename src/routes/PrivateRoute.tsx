@@ -1,14 +1,12 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { useAuth } from "../hooks";
 
 const PrivateRoute = () => {
-  const { isAuthenticated, isLoading } = useAuth();
-
-  if (isLoading) {
-    return <div>Cargando...</div>;
-  }
+  const { isAuthenticated, setIntendedRoute } = useAuth();
+  const location = useLocation();
 
   if (!isAuthenticated) {
+    setIntendedRoute(location.pathname);
     return <Navigate to="/login" replace />;
   }
 

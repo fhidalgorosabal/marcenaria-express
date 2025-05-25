@@ -1,4 +1,4 @@
-import { AboutUsDataType } from "../../../types/AboutUsDataType";
+import { AboutUsDataType } from "../../../types";
 
 import aboutUsData from "../../../data/about-us.json";
 

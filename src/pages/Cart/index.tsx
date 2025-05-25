@@ -1,4 +1,4 @@
-import { useCart } from "../../hooks/useCart";
+import { useCart } from "../../hooks";
 import { formatPrice } from "../../utils";
 
 const Cart = () => {

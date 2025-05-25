@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { formatPrice } from "../../utils";
-import { useCart } from "../../hooks/useCart";
-import Button from "../../components/common/Button";
+import { useCart } from "../../hooks";
+import { Button } from "../../components/common";
 import productsData from "../../data/products.json";
 
 interface Product {

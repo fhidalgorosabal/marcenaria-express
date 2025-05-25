@@ -1,9 +1,7 @@
 import { ROUTES } from "../../constants";
-import Button from "../../components/common/Button";
-import Banner from "../../components/common/Banner";
-import AboutUs from "../../components/features/sections/AboutUs";
-import Services from "../../components/features/sections/Services";
-import Footer from "../../components/layout/Footer";
+import { Footer } from "../../components/layout";
+import { Button, Banner } from "../../components/common";
+import { AboutUs, Services } from "../../components/features";
 
 const Home = () => {
   return (

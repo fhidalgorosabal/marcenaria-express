@@ -1,4 +1,4 @@
-import { ServicesDataType } from "../../../types/ServicesDataType";
+import { ServicesDataType } from "../../../types";
 import "../../../assets/styles/services.css";
 
 import servicesData from "../../../data/services.json";

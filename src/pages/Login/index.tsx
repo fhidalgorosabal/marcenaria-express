@@ -1,6 +1,6 @@
-import Banner from "../../components/common/Banner";
-import LoginForm from "../../components/features/auth/LoginForm";
-import { useLogin } from "../../hooks/useLogin";
+import { useLogin } from "../../hooks";
+import { Banner } from "../../components/common";
+import { LoginForm } from "../../components/features";
 
 const Login = () => {
   const {

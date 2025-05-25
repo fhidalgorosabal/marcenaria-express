@@ -1,4 +1,4 @@
-import { ButtonType } from "../../types/ButtonType";
+import { ButtonType } from "../../types";
 import {
   BUTTON_BASE_STYLES,
   BUTTON_VARIANTS,

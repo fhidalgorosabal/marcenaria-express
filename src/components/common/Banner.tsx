@@ -1,4 +1,4 @@
-import { BannerType } from "../../types/BannerType";
+import { BannerType } from "../../types";
 import "../../assets/styles/banner.css";
 
 const Banner = ({

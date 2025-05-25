@@ -1,6 +1,6 @@
+import { ProductsDataType } from "../../types";
+import { Footer } from "../../components/layout";
 import Card from "../../components/common/Card";
-import Footer from "../../components/layout/Footer";
-import { ProductsDataType } from "../../types/ProductsDataType";
 
 import productsData from "../../data/products.json";
 

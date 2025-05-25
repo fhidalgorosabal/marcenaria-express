@@ -1,5 +1,5 @@
 import Button from "../../common/Button";
-import { LoginFormType } from "../../../types/LoginFormType";
+import { LoginFormType } from "../../../types";
 
 const LoginForm = ({
   email,

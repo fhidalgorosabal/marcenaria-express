@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { useCart } from "../../hooks/useCart";
+import { useCart } from "../../hooks";
 import { formatPrice } from "../../utils";
-import { CardType } from "../../types/CardType";
+import { CardType } from "../../types";
 import Button from "./Button";
 
 const Card = ({

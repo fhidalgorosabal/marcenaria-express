@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ROUTES, STYLES_HEADER } from "../../constants";
 
-export const NavLinks = ({
+const NavLinks = ({
   isActive,
   isScrolled,
   isScrollPage,
@@ -33,3 +33,5 @@ export const NavLinks = ({
     </Link>
   </div>
 );
+
+export default NavLinks;

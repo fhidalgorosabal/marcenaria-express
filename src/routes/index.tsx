@@ -8,6 +8,7 @@ import Products from "../pages/Products";
 import ProductDetails from "../pages/ProductDetails";
 import Cart from "../pages/Cart";
 import NotFound from "../pages/NotFound";
+import Register from "../pages/Register";
 
 const AppRoutes = () => {
   return (
@@ -17,6 +18,7 @@ const AppRoutes = () => {
       <Route path={ROUTES.NOT_FOUND} element={<NotFound />} />
       <Route element={<PublicRoute />}>
         <Route path={ROUTES.LOGIN} element={<Login />} />
+        <Route path={ROUTES.REGISTER} element={<Register />} />
       </Route>
 
       <Route element={<PrivateRoute />}>

@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import { ROUTES } from "../../constants";
-import { STYLES_HEADER } from "../../constants";
-import { useCart } from "../../hooks/useCart";
+import { ROUTES, STYLES_HEADER } from "../../constants";
+import { useCart } from "../../hooks";
 
-export const MobileMenu = ({
+const MobileMenu = ({
   isOpen,
   isActive,
   isAuthenticated,
@@ -83,3 +82,5 @@ export const MobileMenu = ({
     </div>
   );
 };
+
+export default MobileMenu;

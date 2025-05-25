@@ -1,12 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useAuth, useScrollBehavior } from "../../hooks";
-import { ROUTES } from "../../constants";
-import { STYLES_HEADER } from "../../constants";
-import { MobileMenu } from "./MobileMenu";
-import { NavLinks } from "./NavLinks";
-import Button from "../common/Button";
-import { useCart } from "../../hooks/useCart";
+import { useAuth, useScrollBehavior, useCart } from "../../hooks";
+import { ROUTES, STYLES_HEADER } from "../../constants";
+import { Button } from "../common";
+import NavLinks from "./NavLinks";
+import MobileMenu from "./MobileMenu";
 
 const NavBar = () => {
   const { isAuthenticated, logout } = useAuth();
@@ -17,7 +15,9 @@ const NavBar = () => {
   const itemCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   const isScrollPage =
-    location.pathname === ROUTES.HOME || location.pathname === ROUTES.LOGIN;
+    location.pathname === ROUTES.HOME ||
+    location.pathname === ROUTES.LOGIN ||
+    location.pathname === ROUTES.REGISTER;
   const isScrolled = useScrollBehavior(isScrollPage, isMenuOpen);
 
   const isActive = (path: string) => location.pathname === path;
@@ -29,6 +29,10 @@ const NavBar = () => {
 
   const handleLogin = () => {
     navigate(ROUTES.LOGIN);
+  };
+
+  const handleRegister = () => {
+    navigate(ROUTES.REGISTER);
   };
 
   const handleCart = () => {
@@ -86,7 +90,7 @@ const NavBar = () => {
               </Button>
             ) : (
               <Button
-                onClick={handleLogin}
+                onClick={isActive(ROUTES.LOGIN) ? handleRegister : handleLogin}
                 variant="outline"
                 isScrolled={isScrolled || !isScrollPage}
               >
@@ -141,7 +145,7 @@ const NavBar = () => {
           isActive={isActive}
           isAuthenticated={isAuthenticated}
           onLogout={handleLogout}
-          onLogin={handleLogin}
+          onLogin={isActive(ROUTES.LOGIN) ? handleRegister : handleLogin}
           onClose={() => setIsMenuOpen(false)}
         />
       </nav>

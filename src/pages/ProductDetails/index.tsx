@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { formatPrice } from "../../utils";
 import { useCart } from "../../hooks";
 import { Button } from "../../components/common";
@@ -15,6 +15,7 @@ interface Product {
 
 const ProductDetails = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const { addToCart } = useCart();
@@ -89,9 +90,14 @@ const ProductDetails = () => {
           <p className="text-2xl font-semibold text-gray-800 mb-6">
             {formatPrice(product.price)}
           </p>
-          <Button variant="primary" onClick={handleAddToCart}>
-            Agregar al carrito
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button variant="primary" onClick={handleAddToCart}>
+              Agregar al carrito
+            </Button>
+            <Button variant="secondary" onClick={() => navigate("/products")}>
+              Volver a productos
+            </Button>
+          </div>
         </div>
       </div>
     </div>

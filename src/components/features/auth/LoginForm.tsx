@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { toast } from "react-toastify";
 import { LoginFormType } from "../../../types";
+import { useTranslation } from "../../../hooks";
 import Button from "../../common/Button";
 
 const LoginForm = ({
@@ -12,6 +13,8 @@ const LoginForm = ({
   isLoading,
   onSubmit,
 }: LoginFormType) => {
+  const { translate } = useTranslation();
+
   useEffect(() => {
     if (error) toast.error(error);
   }, [error]);
@@ -21,7 +24,7 @@ const LoginForm = ({
       <div className="rounded-md shadow-sm -space-y-px">
         <div>
           <label htmlFor="email-address" className="sr-only">
-            Email
+            {translate("email-form")}
           </label>
           <input
             id="email-address"
@@ -30,7 +33,7 @@ const LoginForm = ({
             autoComplete="email"
             required
             className="appearance-none relative block w-full px-3 py-4 bg-white/20 border border-gray-300 placeholder-gray-200 text-gray-200 rounded-t-md focus:outline-none focus:ring-gray-400 focus:border-2 focus:border-gray-200 focus:z-10 sm:text-sm"
-            placeholder="Email"
+            placeholder={translate("email-form")}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={isLoading}
@@ -38,7 +41,7 @@ const LoginForm = ({
         </div>
         <div>
           <label htmlFor="password" className="sr-only">
-            Contraseña
+            {translate("password-form")}
           </label>
           <input
             id="password"
@@ -47,7 +50,7 @@ const LoginForm = ({
             autoComplete="current-password"
             required
             className="appearance-none relative block w-full px-3 py-4 bg-white/20 border border-gray-300 placeholder-gray-200 text-gray-200 rounded-b-md focus:outline-none focus:ring-gray-400 focus:border-2 focus:border-gray-200 focus:z-10 sm:text-sm"
-            placeholder="Contraseña"
+            placeholder={translate("password-form")}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             disabled={isLoading}
@@ -57,7 +60,7 @@ const LoginForm = ({
 
       <div>
         <Button variant="outline" type="submit" size="xl" isLoading={isLoading}>
-          Iniciar sesión
+          {translate("login-menu")}
         </Button>
       </div>
     </form>

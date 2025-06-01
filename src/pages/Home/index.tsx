@@ -2,20 +2,22 @@ import { ROUTES } from "../../constants";
 import { Footer } from "../../components/layout";
 import { Button, Banner } from "../../components/common";
 import { AboutUs, Services } from "../../components/features";
+import { useTranslation } from "../../hooks";
 
 const Home = () => {
+  const { translate } = useTranslation();
   return (
     <>
       <Banner
-        title="BIENVENIDO A </br> MARCENARIA EXPRESS"
-        content="Descubre nuestra colección de muebles artesanales"
+        title={translate("home-page-title")}
+        content={translate("home-page-subtitle")}
       >
         <Button
           variant="outline"
           size="md"
           onClick={() => (window.location.href = ROUTES.PRODUCTS)}
         >
-          Ver Productos
+          {translate("see-products")}
         </Button>
       </Banner>
 

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { toast } from "react-toastify";
 import { RegisterFormType } from "../../../types";
+import { useTranslation } from "../../../hooks";
 import Button from "../../common/Button";
 
 const RegisterForm = ({
@@ -16,6 +17,8 @@ const RegisterForm = ({
   isLoading,
   onSubmit,
 }: RegisterFormType) => {
+  const { translate } = useTranslation();
+
   useEffect(() => {
     if (error) toast.error(error);
   }, [error]);
@@ -25,7 +28,7 @@ const RegisterForm = ({
       <div className="rounded-md shadow-sm -space-y-px">
         <div>
           <label htmlFor="full-name" className="sr-only">
-            Nombre completo
+            {translate("name-full-form")}
           </label>
           <input
             id="full-name"
@@ -34,7 +37,7 @@ const RegisterForm = ({
             autoComplete="name"
             required
             className="appearance-none relative block w-full px-3 py-4 bg-white/20 border border-gray-300 placeholder-gray-200 text-gray-200 rounded-t-md focus:outline-none focus:ring-gray-400 focus:border-2 focus:border-gray-200 focus:z-10 sm:text-sm"
-            placeholder="Nombre completo"
+            placeholder={translate("name-full-form")}
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
             disabled={isLoading}
@@ -42,7 +45,7 @@ const RegisterForm = ({
         </div>
         <div>
           <label htmlFor="email-address" className="sr-only">
-            Email
+            {translate("email-form")}
           </label>
           <input
             id="email-address"
@@ -51,7 +54,7 @@ const RegisterForm = ({
             autoComplete="email"
             required
             className="appearance-none relative block w-full px-3 py-4 bg-white/20 border border-gray-300 placeholder-gray-200 text-gray-200 focus:outline-none focus:ring-gray-400 focus:border-2 focus:border-gray-200 focus:z-10 sm:text-sm"
-            placeholder="Email"
+            placeholder={translate("email-form")}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={isLoading}
@@ -59,7 +62,7 @@ const RegisterForm = ({
         </div>
         <div>
           <label htmlFor="password" className="sr-only">
-            Contraseña
+            {translate("password-form")}
           </label>
           <input
             id="password"
@@ -68,7 +71,7 @@ const RegisterForm = ({
             autoComplete="new-password"
             required
             className="appearance-none relative block w-full px-3 py-4 bg-white/20 border border-gray-300 placeholder-gray-200 text-gray-200 focus:outline-none focus:ring-gray-400 focus:border-2 focus:border-gray-200 focus:z-10 sm:text-sm"
-            placeholder="Contraseña"
+            placeholder={translate("password-form")}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             disabled={isLoading}
@@ -76,7 +79,7 @@ const RegisterForm = ({
         </div>
         <div>
           <label htmlFor="confirm-password" className="sr-only">
-            Confirmar contraseña
+            {translate("confirm-password-form")}
           </label>
           <input
             id="confirm-password"
@@ -85,7 +88,7 @@ const RegisterForm = ({
             autoComplete="new-password"
             required
             className="appearance-none relative block w-full px-3 py-4 bg-white/20 border border-gray-300 placeholder-gray-200 text-gray-200 rounded-b-md focus:outline-none focus:ring-gray-400 focus:border-2 focus:border-gray-200 focus:z-10 sm:text-sm"
-            placeholder="Confirmar contraseña"
+            placeholder={translate("confirm-password-form")}
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             disabled={isLoading}
@@ -95,7 +98,7 @@ const RegisterForm = ({
 
       <div>
         <Button variant="outline" type="submit" size="xl" isLoading={isLoading}>
-          Registrarse
+          {translate("register-menu")}
         </Button>
       </div>
     </form>

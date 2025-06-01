@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom";
 import { ROUTES, STYLES_HEADER } from "../../constants";
-import { useCart } from "../../hooks";
+import { useTranslation } from "../../hooks";
+
+interface MobileMenuProps {
+  isOpen: boolean;
+  isActive: (path: string) => boolean;
+  isAuthenticated: boolean;
+  onLogout: () => void;
+  onLogin: () => void;
+  onClose: () => void;
+}
 
 const MobileMenu = ({
   isOpen,
@@ -9,62 +18,48 @@ const MobileMenu = ({
   onLogout,
   onLogin,
   onClose,
-}: {
-  isOpen: boolean;
-  isActive: (path: string) => boolean;
-  isAuthenticated: boolean;
-  onLogout: () => void;
-  onLogin: () => void;
-  onClose: () => void;
-}) => {
-  const { cartItems } = useCart();
-  const itemCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+}: MobileMenuProps) => {
+  const { translate } = useTranslation();
+
+  if (!isOpen) return null;
 
   return (
-    <div
-      className={`${
-        isOpen ? "block" : "hidden"
-      } md:hidden transition-all duration-300 ease-in-out`}
-    >
-      <div className="pt-2 pb-3 space-y-1">
+    <div className="md:hidden">
+      <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
         <Link
           to={ROUTES.HOME}
           className={STYLES_HEADER.mobileNavLink(isActive(ROUTES.HOME))}
           onClick={onClose}
         >
-          Inicio
+          {translate("home-menu")}
         </Link>
         <Link
           to={ROUTES.PRODUCTS}
           className={STYLES_HEADER.mobileNavLink(isActive(ROUTES.PRODUCTS))}
           onClick={onClose}
         >
-          Productos
+          {translate("products-menu")}
         </Link>
-        <div className="pt-1 border-t border-gray-200">
-          <Link
-            to={ROUTES.CART}
-            className={STYLES_HEADER.mobileNavLink(isActive(ROUTES.CART))}
-            onClick={onClose}
-          >
-            <div className="flex items-center justify-between">
-              <span>Carrito</span>
-              {itemCount > 0 && (
-                <span className="bg-blue-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  {itemCount}
-                </span>
-              )}
-            </div>
-          </Link>
+        <Link
+          to={ROUTES.CART}
+          className={STYLES_HEADER.mobileNavLink(isActive(ROUTES.CART))}
+          onClick={onClose}
+        >
+          {translate("cart-menu")}
+        </Link>
+      </div>
+
+      <div className="pt-4 pb-3 border-t border-gray-200">
+        <div className="mt-3 px-2 space-y-1">
           {isAuthenticated ? (
             <button
               onClick={() => {
                 onLogout();
                 onClose();
               }}
-              className="block w-full text-left px-3 py-2 mt-1 rounded-md text-base font-medium text-gray-600 hover:text-gray-700 hover:bg-gray-100"
+              className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
             >
-              Cerrar sesión
+              {translate("logout-menu")}
             </button>
           ) : (
             <button
@@ -72,9 +67,11 @@ const MobileMenu = ({
                 onLogin();
                 onClose();
               }}
-              className="block w-full text-left px-3 py-2 mt-1 rounded-md text-base font-medium text-gray-600 hover:text-gray-700 hover:bg-gray-100"
+              className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
             >
-              Iniciar sesión
+              {!isActive(ROUTES.LOGIN)
+                ? translate("login-menu")
+                : translate("register-menu")}
             </button>
           )}
         </div>

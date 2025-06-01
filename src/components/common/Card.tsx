@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useCart } from "../../hooks";
 import { formatPrice } from "../../utils";
 import { CardType } from "../../types";
+import { useTranslation } from "../../hooks";
 import Button from "./Button";
 
 const Card = ({
@@ -14,6 +15,7 @@ const Card = ({
 }: CardType) => {
   const { addToCart } = useCart();
   const navigate = useNavigate();
+  const { translate } = useTranslation();
   const shortDescription =
     description && description?.length > 40
       ? `${description.substring(0, 40)}...`
@@ -53,7 +55,7 @@ const Card = ({
             size="lg"
             onClick={handleAddToCart}
           >
-            Añadir al carrito
+            {translate("add-cart-button")}
           </Button>
         </div>
       </div>

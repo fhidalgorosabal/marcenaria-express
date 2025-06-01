@@ -4,6 +4,7 @@ import {
   BUTTON_VARIANTS,
   BUTTON_SIZES,
 } from "../../constants";
+import { useTranslation } from "../../hooks";
 
 const Button = ({
   children,
@@ -15,6 +16,7 @@ const Button = ({
   withCounter = false,
   ...props
 }: ButtonType) => {
+  const { translate } = useTranslation();
   const getVariantClass = () => {
     const variantClass = BUTTON_VARIANTS[variant];
     return typeof variantClass === "function"
@@ -30,7 +32,7 @@ const Button = ({
       disabled={isLoading}
       {...props}
     >
-      {isLoading ? "Cargando..." : children}
+      {isLoading ? translate("loading-label") : children}
     </button>
   );
 };

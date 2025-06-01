@@ -7,6 +7,7 @@ import {
   FaXTwitter,
 } from "react-icons/fa6";
 import { Button } from "../common";
+import { useTranslation } from "../../hooks";
 
 const Footer = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +15,7 @@ const Footer = () => {
     email: "",
     message: "",
   });
+  const { translate } = useTranslation();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,20 +35,20 @@ const Footer = () => {
 
   return (
     <section className="max-w-7xl mx-auto px-4 py-16">
-      <h2 className="text-3xl font-bold text-gray-800 mb-8">Contáctanos</h2>
+      <h2 className="text-3xl font-bold text-gray-800 mb-8">
+        {translate("contact-title")}
+      </h2>
       <div className="grid md:grid-cols-2 gap-8">
         <div>
           <p className="text-gray-600 mb-6">
-            ¿Tienes un proyecto en mente? Estamos aquí para ayudarte. Completa
-            el formulario y nos pondremos en contacto contigo lo antes posible.
+            {translate("contact-description")}
           </p>
           <div className="space-y-4">
             <div className="flex items-center text-gray-600">
-              <FaPhone size={20} className="mr-2" /> +55 11 91234-5678
+              <FaPhone size={20} className="mr-2" /> {translate("phone-number")}
             </div>
             <div className="flex items-center text-gray-600">
-              <FaEnvelope size={20} className="mr-2" />{" "}
-              marcenariaexpress@gmail.com
+              <FaEnvelope size={20} className="mr-2" /> {translate("email")}
             </div>
             <div className="flex items-center text-gray-600">
               <FaFacebook size={20} className="mr-2" />{" "}
@@ -56,7 +58,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="hover:text-gray-800"
               >
-                Marcenaria Express
+                {translate("facebook-page")}
               </a>
             </div>
             <div className="flex items-center text-gray-600">
@@ -67,7 +69,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="hover:text-gray-800"
               >
-                @marcenariaexpress
+                {translate("instagram-page")}
               </a>
             </div>
             <div className="flex items-center text-gray-600">
@@ -78,18 +80,19 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="hover:text-gray-800"
               >
-                @marcenariaexpress
+                {translate("twitter-page")}
               </a>
             </div>
           </div>
         </div>
+
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label
               htmlFor="name"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
-              Nombre
+              {translate("contact-form-name")}
             </label>
             <input
               type="text"
@@ -106,7 +109,7 @@ const Footer = () => {
               htmlFor="email"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
-              Email
+              {translate("contact-form-email")}
             </label>
             <input
               type="email"
@@ -123,7 +126,7 @@ const Footer = () => {
               htmlFor="message"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
-              Mensaje
+              {translate("contact-form-message")}
             </label>
             <textarea
               id="message"
@@ -136,7 +139,7 @@ const Footer = () => {
             />
           </div>
           <Button type="submit" variant="primary" size="lg">
-            Enviar Mensaje
+            {translate("contact-form-submit")}
           </Button>
         </form>
       </div>

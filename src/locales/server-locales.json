@@ -1,0 +1,192 @@
+{
+  "title": {
+    "en": "Marcenaria Express",
+    "es": "Marcenaria Express",
+    "pt": "Marcenaria Express"
+  },
+  "home-menu": {
+    "en": "Home",
+    "es": "Inicio",
+    "pt": "Início"
+  },
+  "products-menu": {
+    "en": "Products",
+    "es": "Productos",
+    "pt": "Produtos"
+  },
+  "cart-menu": {
+    "en": "Cart",
+    "es": "Carrito",
+    "pt": "Carrinho"
+  },
+  "logout-menu": {
+    "en": "Logout",
+    "es": "Cerrar sesión",
+    "pt": "Sair"
+  },
+  "logout-info": {
+    "en": "Logged out successfully",
+    "es": "Cerrada sesión correctamente",
+    "pt": "Sessão encerrada com sucesso"
+  },
+  "login-menu": {
+    "en": "Login",
+    "es": "Iniciar sesión",
+    "pt": "Entrar"
+  },
+  "login-info": {
+    "en": "Logged in successfully",
+    "es": "Inicio de sesión exitoso",
+    "pt": "Login realizado com sucesso"
+  },
+  "register-menu": {
+    "en": "Register",
+    "es": "Registrarse",
+    "pt": "Registrar"
+  },
+  "name-full-form": {
+    "en": "Full name",
+    "es": "Nombre completo",
+    "pt": "Nome completo"
+  },
+  "email-form": {
+    "en": "Email",
+    "es": "Correo",
+    "pt": "E-mail"
+  },
+  "password-form": {
+    "en": "Password",
+    "es": "Contraseña",
+    "pt": "Senha"
+  },
+  "confirm-password-form": {
+    "en": "Confirm password",
+    "es": "Confirmar contraseña",
+    "pt": "Confirme sua senha"
+  },
+  "loading-label": {
+    "en": "Loading...",
+    "es": "Cargando...",
+    "pt": "Carregando..."
+  },
+  "delete-button": {
+    "en": "Delete",
+    "es": "Eliminar",
+    "pt": "Excluir"
+  },
+  "add-cart-button": {
+    "en": "Add to cart",
+    "es": "Agregar al carrito",
+    "pt": "Adicionar ao carrinho"
+  },
+  "language-selector": {
+    "en": "Language",
+    "es": "Idioma",
+    "pt": "Idioma"
+  },
+  "contact-title": {
+    "en": "Contact Us",
+    "es": "Contáctanos",
+    "pt": "Entre em Contato"
+  },
+  "contact-description": {
+    "en": "Do you have a project in mind? We're here to help. Fill out the form and we'll get back to you as soon as possible.",
+    "es": "¿Tienes un proyecto en mente? Estamos aquí para ayudarte. Completa el formulario y nos pondremos en contacto contigo lo antes posible.",
+    "pt": "Tem um projeto em mente? Estamos aqui para ajudar. Preencha o formulário e entraremos em contato o mais breve possível."
+  },
+  "phone-number": {
+    "en": "+55 11 91234-5678",
+    "es": "+55 11 91234-5678",
+    "pt": "+55 11 91234-5678"
+  },
+  "email": {
+    "en": "marcenariaexpress@gmail.com",
+    "es": "marcenariaexpress@gmail.com",
+    "pt": "marcenariaexpress@gmail.com"
+  },
+  "facebook-page": {
+    "en": "Marcenaria Express",
+    "es": "Marcenaria Express",
+    "pt": "Marcenaria Express"
+  },
+  "instagram-page": {
+    "en": "@marcenariaexpress",
+    "es": "@marcenariaexpress",
+    "pt": "@marcenariaexpress"
+  },
+  "twitter-page": {
+    "en": "@marcenariaexpress",
+    "es": "@marcenariaexpress",
+    "pt": "@marcenariaexpress"
+  },
+  "contact-form-name": {
+    "en": "Name",
+    "es": "Nombre",
+    "pt": "Nome"
+  },
+  "contact-form-email": {
+    "en": "Email",
+    "es": "Correo",
+    "pt": "E-mail"
+  },
+  "contact-form-message": {
+    "en": "Message",
+    "es": "Mensaje",
+    "pt": "Mensagem"
+  },
+  "contact-form-submit": {
+    "en": "Send Message",
+    "es": "Enviar Mensaje",
+    "pt": "Enviar Mensagem"
+  },
+  "home-page-title": {
+    "en": "WELCOME TO </br> MARCENARIA EXPRESS",
+    "es": "BIENVENIDO A </br> MARCENARIA EXPRESS",
+    "pt": "BEM-VINDO À </br> MARCENARIA EXPRESS"
+  },
+  "home-page-subtitle": {
+    "en": "Discover our collection of handcrafted furniture",
+    "es": "Descubre nuestra colección de muebles artesanales",
+    "pt": "Descubra nossa coleção de móveis artesanais"
+  },
+  "see-products": {
+    "en": "See products",
+    "es": "Ver productos",
+    "pt": "Ver produtos"
+  },
+  "cart-page-title": {
+    "en": "Shopping Cart",
+    "es": "Carro de Compras",
+    "pt": "Carrinho de compras"
+  },
+  "cart-page-message": {
+    "en": "Your cart is empty",
+    "es": "Tu carrito está vacío",
+    "pt": "Seu carrinho está vazio"
+  },
+  "buy-now": {
+    "en": "Buy now",
+    "es": "Comprar ahora",
+    "pt": "Comprar agora"
+  },
+  "total": {
+    "en": "Total",
+    "es": "Total",
+    "pt": "Total"
+  },
+  "not-found-page-title": {
+    "en": "404 - Not found",
+    "es": "404 - Página no encontrada",
+    "pt": "404 - Página não encontrada"
+  },
+  "not-found-page-subtitle": {
+    "en": "The page you are looking for does not exist.",
+    "es": "La página que estás buscando no existe.",
+    "pt": "A página que você está procurando não existe."
+  },
+  "return-home": {
+    "en": "Return to the beginning",
+    "es": "Volver al inicio",
+    "pt": "Voltar ao começo"
+  }
+}

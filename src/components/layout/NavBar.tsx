@@ -5,8 +5,10 @@ import { ToastContainer, toast } from "react-toastify";
 import { useAuth, useScrollBehavior, useCart } from "../../hooks";
 import { ROUTES, STYLES_HEADER } from "../../constants";
 import { Button } from "../common";
+import { useTranslation } from "../../hooks";
 import NavLinks from "./NavLinks";
 import MobileMenu from "./MobileMenu";
+import LanguageSelector from "../common/LanguageSelector";
 import "react-toastify/dist/ReactToastify.css";
 
 const NavBar = () => {
@@ -15,6 +17,7 @@ const NavBar = () => {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { cartItems } = useCart();
+  const { translate } = useTranslation();
   const itemCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   const isScrollPage =
@@ -26,7 +29,7 @@ const NavBar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   const handleLogout = () => {
-    toast.info("¡Hasta pronto! Has cerrado sesión correctamente");
+    toast.info(translate("logout-info"));
     logout();
     navigate(ROUTES.LOGIN);
   };
@@ -69,7 +72,7 @@ const NavBar = () => {
                 to={ROUTES.HOME}
                 className={STYLES_HEADER.logo(isScrolled, isScrollPage)}
               >
-                MARCENARIA EXPRESS
+                {translate("title")}
               </Link>
             </div>
 
@@ -81,6 +84,8 @@ const NavBar = () => {
           </div>
 
           <div className="hidden md:flex md:items-center md:ml-6 space-x-4">
+            <LanguageSelector />
+
             {isAuthenticated && (
               <Button
                 onClick={handleCart}
@@ -104,7 +109,7 @@ const NavBar = () => {
                 variant="outline"
                 isScrolled={isScrolled || !isScrollPage}
               >
-                Cerrar sesión
+                {translate("logout-menu")}
               </Button>
             ) : (
               <Button
@@ -112,17 +117,19 @@ const NavBar = () => {
                 variant="outline"
                 isScrolled={isScrolled || !isScrollPage}
               >
-                {!isActive(ROUTES.LOGIN) ? "Iniciar sesión" : "Registrarse"}
+                {!isActive(ROUTES.LOGIN)
+                  ? translate("login-menu")
+                  : translate("register-menu")}
               </Button>
             )}
           </div>
 
           <div className="flex items-center md:hidden">
+            <LanguageSelector />
             <button
               onClick={toggleMenu}
               className={STYLES_HEADER.menuButton(isScrolled, isScrollPage)}
             >
-              <span className="sr-only">Abrir menú principal</span>
               {isMenuOpen ? (
                 <svg
                   className="h-6 w-6"

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./useAuth";
 import { LoginType } from "../types";
+import { toast } from "react-toastify";
 
 export const useLogin = () => {
   const [email, setEmail] = useState("");
@@ -39,6 +40,8 @@ export const useLogin = () => {
       const response = await mockLogin(email, password);
 
       if (response.success) {
+        toast.info("¡Bienvenido! Has iniciado sesión correctamente");
+
         await login({ email, password });
         navigate(intendedRoute || "/");
         setIntendedRoute(null);

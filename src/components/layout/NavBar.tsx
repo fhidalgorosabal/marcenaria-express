@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
+import { ToastContainer } from "react-toastify";
 import { useAuth, useScrollBehavior, useCart } from "../../hooks";
 import { ROUTES, STYLES_HEADER } from "../../constants";
 import { Button } from "../common";
 import NavLinks from "./NavLinks";
 import MobileMenu from "./MobileMenu";
+import "react-toastify/dist/ReactToastify.css";
 
 const NavBar = () => {
   const { isAuthenticated, logout } = useAuth();
@@ -46,6 +48,18 @@ const NavBar = () => {
 
   return (
     <header className={STYLES_HEADER.header(isScrolled, isScrollPage)}>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">

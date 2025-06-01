@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { useAuth } from "./useAuth";
 import { LoginType } from "../types";
-import { toast } from "react-toastify";
 
 export const useLogin = () => {
   const [email, setEmail] = useState("");

@@ -1,5 +1,7 @@
-import Button from "../../common/Button";
+import { useEffect } from "react";
+import { toast } from "react-toastify";
 import { RegisterFormType } from "../../../types";
+import Button from "../../common/Button";
 
 const RegisterForm = ({
   fullName,
@@ -14,9 +16,12 @@ const RegisterForm = ({
   isLoading,
   onSubmit,
 }: RegisterFormType) => {
+  useEffect(() => {
+    if (error) toast.error(error);
+  }, [error]);
+
   return (
     <form className="mt-8 space-y-6" onSubmit={onSubmit}>
-      {error && <div className="text-red-500 text-center text-sm">{error}</div>}
       <div className="rounded-md shadow-sm -space-y-px">
         <div>
           <label htmlFor="full-name" className="sr-only">

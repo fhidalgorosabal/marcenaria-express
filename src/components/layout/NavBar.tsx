@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import { useAuth, useScrollBehavior, useCart } from "../../hooks";
 import { ROUTES, STYLES_HEADER } from "../../constants";
 import { Button } from "../common";
@@ -26,6 +26,7 @@ const NavBar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   const handleLogout = () => {
+    toast.info("¡Hasta pronto! Has cerrado sesión correctamente");
     logout();
     navigate(ROUTES.LOGIN);
   };

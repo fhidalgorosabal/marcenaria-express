@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { useAuth } from "./useAuth";
 import { RegisterType } from "../types";
 
@@ -48,6 +49,8 @@ export const useRegister = () => {
       const response = await mockRegister(fullName, email, password);
 
       if (response.success) {
+        toast.info("¡Bienvenido! Te has registrado correctamente");
+
         await login({ email, password });
         navigate("/");
       } else {

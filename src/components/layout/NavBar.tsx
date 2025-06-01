@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
 import { useAuth, useScrollBehavior, useCart } from "../../hooks";
 import { ROUTES, STYLES_HEADER } from "../../constants";
 import { Button } from "../common";
@@ -65,20 +66,22 @@ const NavBar = () => {
           </div>
 
           <div className="hidden md:flex md:items-center md:ml-6 space-x-4">
-            <Button
-              onClick={handleCart}
-              variant="outline"
-              isScrolled={isScrolled || !isScrollPage}
-              withCounter
-              className="relative"
-            >
-              Carrito
-              {itemCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-blue-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  {itemCount}
-                </span>
-              )}
-            </Button>
+            {isAuthenticated && (
+              <Button
+                onClick={handleCart}
+                variant="outline"
+                isScrolled={isScrolled || !isScrollPage}
+                withCounter
+                className="relative"
+              >
+                <FaShoppingCart size={20} />
+                {itemCount > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-blue-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                    {itemCount}
+                  </span>
+                )}
+              </Button>
+            )}
 
             {isAuthenticated ? (
               <Button

@@ -1,4 +1,11 @@
 import { useState } from "react";
+import {
+  FaEnvelope,
+  FaPhone,
+  FaFacebook,
+  FaInstagram,
+  FaXTwitter,
+} from "react-icons/fa6";
 import { Button } from "../common";
 
 const Footer = () => {
@@ -35,36 +42,44 @@ const Footer = () => {
           </p>
           <div className="space-y-4">
             <div className="flex items-center text-gray-600">
-              <svg
-                className="w-6 h-6 mr-3"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                />
-              </svg>
-              +123 456 7890
+              <FaPhone size={20} className="mr-2" /> +55 11 91234-5678
             </div>
             <div className="flex items-center text-gray-600">
-              <svg
-                className="w-6 h-6 mr-3"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+              <FaEnvelope size={20} className="mr-2" />{" "}
+              marcenariaexpress@gmail.com
+            </div>
+            <div className="flex items-center text-gray-600">
+              <FaFacebook size={20} className="mr-2" />{" "}
+              <a
+                href="https://facebook.com/marcenariaexpress"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-800"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
-              contacto@marcenariaexpress.com
+                Marcenaria Express
+              </a>
+            </div>
+            <div className="flex items-center text-gray-600">
+              <FaInstagram size={20} className="mr-2" />{" "}
+              <a
+                href="https://instagram.com/marcenariaexpress"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-800"
+              >
+                @marcenariaexpress
+              </a>
+            </div>
+            <div className="flex items-center text-gray-600">
+              <FaXTwitter size={20} className="mr-2" />{" "}
+              <a
+                href="https://x.com/marcenariaexpress"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-800"
+              >
+                @marcenariaexpress
+              </a>
             </div>
           </div>
         </div>

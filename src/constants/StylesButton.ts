@@ -11,6 +11,7 @@ export const BUTTON_VARIANTS: Record<
   secondary:
     "bg-stone-500/80 text-white hover:bg-stone-300/80 focus:ring-stone-500",
   success: "bg-green-600 text-white hover:bg-green-700 focus:ring-green-500",
+  danger: "bg-red-600 text-white hover:bg-red-700 focus:ring-red-500",
   outline: (isScrolled: boolean) =>
     isScrolled
       ? "border border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-yellow-800"

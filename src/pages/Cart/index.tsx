@@ -1,5 +1,6 @@
 import { useCart } from "../../hooks";
 import { formatPrice } from "../../utils";
+import Button from "../../components/common/Button";
 
 const Cart = () => {
   const { cartItems, removeFromCart, updateQuantity } = useCart();
@@ -36,36 +37,41 @@ const Cart = () => {
 
               <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-2">
-                  <button
+                  <Button
                     onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                    className="px-2 py-1 border rounded"
+                    variant="secondary"
+                    size="sm"
                     disabled={item.quantity <= 1}
+                    className="min-w-[32px] h-8 flex items-center justify-center"
                   >
                     -
-                  </button>
-                  <span>{item.quantity}</span>
-                  <button
+                  </Button>
+                  <span className="w-8 text-center">{item.quantity}</span>
+                  <Button
                     onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                    className="px-2 py-1 border rounded"
+                    variant="secondary"
+                    size="sm"
+                    className="min-w-[32px] h-8 flex items-center justify-center"
                   >
                     +
-                  </button>
+                  </Button>
                 </div>
-                <button
+                <Button
                   onClick={() => removeFromCart(item.id)}
-                  className="text-red-500 hover:text-red-700"
+                  variant="danger"
+                  size="sm"
                 >
                   Eliminar
-                </button>
+                </Button>
               </div>
             </div>
           ))}
 
           <div className="mt-8 text-right">
             <p className="text-xl font-bold">Total: {formatPrice(total)}</p>
-            <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
-              Proceder al pago
-            </button>
+            <Button variant="primary" size="md" className="mt-4">
+              Comprar ahora
+            </Button>
           </div>
         </div>
       )}

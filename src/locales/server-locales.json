@@ -188,5 +188,20 @@
     "en": "Return to the beginning",
     "es": "Volver al inicio",
     "pt": "Voltar ao começo"
+  },
+  "product-not-found": {
+    "en": "Product not found",
+    "es": "Producto no encontrado",
+    "pt": "Produto não encontrado"
+  },
+  "back-to-products": {
+    "en": "Back to products",
+    "es": "Volver a productos",
+    "pt": "Voltar aos produtos"
+  },
+  "our-products": {
+    "en": "Our Products",
+    "es": "Nuestros Productos",
+    "pt": "Nossos produtos"
   }
 }

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { formatPrice } from "../../utils";
-import { useCart } from "../../hooks";
+import { useCart, useTranslation } from "../../hooks";
 import { Button } from "../../components/common";
 import productsData from "../../data/products.json";
 
@@ -14,6 +14,7 @@ interface Product {
 }
 
 const ProductDetails = () => {
+  const { translate } = useTranslation();
   const { id } = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState<Product | null>(null);
@@ -61,7 +62,7 @@ const ProductDetails = () => {
     return (
       <div className="flex justify-center items-center min-h-screen">
         <h1 className="text-2xl font-bold text-gray-800">
-          Producto no encontrado
+          {translate("product-not-found")}
         </h1>
       </div>
     );
@@ -92,10 +93,10 @@ const ProductDetails = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button variant="primary" onClick={handleAddToCart}>
-              Agregar al carrito
+              {translate("add-cart-button")}
             </Button>
             <Button variant="secondary" onClick={() => navigate("/products")}>
-              Volver a productos
+              {translate("back-to-products")}
             </Button>
           </div>
         </div>

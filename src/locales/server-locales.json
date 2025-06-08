@@ -203,5 +203,150 @@
     "en": "Our Products",
     "es": "Nuestros Productos",
     "pt": "Nossos produtos"
+  },
+  "about-title": {
+    "en": "About Us",
+    "es": "Sobre Nosotros",
+    "pt": "Sobre Nós"
+  },
+  "about-description": {
+    "en": "At Marcenaria Express, we specialize in creating high-quality artisanal furniture. With over 15 years of experience in the sector, our team of expert craftsmen combines traditional techniques with modern designs to create unique pieces that transform spaces.",
+    "es": "En Marcenaria Express, nos especializamos en la creación de muebles artesanales de alta calidad. Con más de 15 años de experiencia en el sector, nuestro equipo de artesanos expertos combina técnicas tradicionales con diseños modernos para crear piezas únicas que transforman espacios.",
+    "pt": "Na Marcenaria Express, nos especializamos na criação de móveis artesanais de alta qualidade. Com mais de 15 anos de experiência no setor, nossa equipe de artesãos especializados combina técnicas tradicionais com designs modernos para criar peças únicas que transformam espaços."
+  },
+  "quality-title": {
+    "en": "Artisanal Quality",
+    "es": "Calidad artesanal",
+    "pt": "Qualidade artesanal"
+  },
+  "design-title": {
+    "en": "Custom Design",
+    "es": "Diseño personalizado",
+    "pt": "Design personalizado"
+  },
+  "sustainability-title": {
+    "en": "Sustainable Materials",
+    "es": "Materiales sostenibles",
+    "pt": "Materiais sustentáveis"
+  },
+  "service-title": {
+    "en": "Customer Service",
+    "es": "Atención al cliente",
+    "pt": "Atendimento ao cliente"
+  },
+  "services-title": {
+    "en": "Our Services",
+    "es": "Nuestros Servicios",
+    "pt": "Nossos Serviços"
+  },
+  "custom-furniture": {
+    "en": "Custom Furniture",
+    "es": "Muebles a Medida",
+    "pt": "Móveis Sob Medida"
+  },
+  "custom-furniture-desc": {
+    "en": "We design and manufacture custom furniture according to your needs and preferences, ensuring a unique and functional result.",
+    "es": "Diseñamos y fabricamos muebles personalizados según tus necesidades y preferencias, asegurando un resultado único y funcional.",
+    "pt": "Projetamos e fabricamos móveis personalizados de acordo com suas necessidades e preferências, garantindo um resultado único e funcional."
+  },
+  "restoration": {
+    "en": "Restoration",
+    "es": "Restauración",
+    "pt": "Restauração"
+  },
+  "restoration-desc": {
+    "en": "We restore antique furniture, returning them to their original splendor while preserving their history and sentimental value.",
+    "es": "Restauramos muebles antiguos devolviéndoles su esplendor original, preservando su historia y valor sentimental.",
+    "pt": "Restauramos móveis antigos, devolvendo-lhes seu esplendor original, preservando sua história e valor sentimental."
+  },
+  "design-consultation": {
+    "en": "Design Consultation",
+    "es": "Asesoría en Diseño",
+    "pt": "Consultoria de Design"
+  },
+  "design-consultation-desc": {
+    "en": "We offer professional consulting to help you choose the perfect furniture for your space.",
+    "es": "Ofrecemos consultoría profesional para ayudarte a elegir los muebles perfectos para tu espacio.",
+    "pt": "Oferecemos consultoria profissional para ajudá-lo a escolher os móveis perfeitos para seu espaço."
+  },
+  "wardrobe-white": {
+    "en": "White Wardrobe",
+    "es": "Ropero blanco",
+    "pt": "Guarda-roupa branco"
+  },
+  "wardrobe-white-desc": {
+    "en": "White wardrobe with 3 doors and 2 drawers",
+    "es": "Ropero blanco con 3 puertas y 2 cajones",
+    "pt": "Guarda-roupa branco com 3 portas e 2 gavetas"
+  },
+  "wardrobe-red": {
+    "en": "Red Wardrobe",
+    "es": "Ropero rojo",
+    "pt": "Guarda-roupa vermelho"
+  },
+  "wardrobe-red-desc": {
+    "en": "Red wardrobe with 3 doors and 2 drawers",
+    "es": "Ropero rojo con 3 puertas y 2 cajones",
+    "pt": "Guarda-roupa vermelho com 3 portas e 2 gavetas"
+  },
+  "kitchen-white": {
+    "en": "White Kitchen Cabinet",
+    "es": "Mueble de cocina blanco",
+    "pt": "Armário de cozinha branco"
+  },
+  "kitchen-white-desc": {
+    "en": "White kitchen cabinet with 3 doors and 2 drawers",
+    "es": "Mueble de cocina blanco con 3 puertas y 2 cajones",
+    "pt": "Armário de cozinha branco com 3 portas e 2 gavetas"
+  },
+  "kitchen-black": {
+    "en": "Black Kitchen Cabinet",
+    "es": "Mueble de cocina negro",
+    "pt": "Armário de cozinha preto"
+  },
+  "kitchen-black-desc": {
+    "en": "Black kitchen cabinet with 3 doors and 2 drawers",
+    "es": "Mueble de cocina negro con 3 puertas y 2 cajones",
+    "pt": "Armário de cozinha preto com 3 portas e 2 gavetas"
+  },
+  "product-1-name": {
+    "en": "White Wardrobe",
+    "es": "Ropero blanco",
+    "pt": "Guarda-roupa branco"
+  },
+  "product-1-desc": {
+    "en": "White wardrobe with 3 doors and 2 drawers",
+    "es": "Ropero blanco con 3 puertas y 2 cajones",
+    "pt": "Guarda-roupa branco com 3 portas e 2 gavetas"
+  },
+  "product-2-name": {
+    "en": "Red Wardrobe",
+    "es": "Ropero rojo",
+    "pt": "Guarda-roupa vermelho"
+  },
+  "product-2-desc": {
+    "en": "Red wardrobe with 3 doors and 2 drawers",
+    "es": "Ropero rojo con 3 puertas y 2 cajones",
+    "pt": "Guarda-roupa vermelho com 3 portas e 2 gavetas"
+  },
+  "product-3-name": {
+    "en": "White Kitchen Cabinet",
+    "es": "Mueble de cocina blanco",
+    "pt": "Armário de cozinha branco"
+  },
+  "product-3-desc": {
+    "en": "White kitchen cabinet with 3 doors and 2 drawers",
+    "es": "Mueble de cocina blanco con 3 puertas y 2 cajones",
+    "pt": "Armário de cozinha branco com 3 portas e 2 gavetas"
+  },
+  "product-4-name": {
+    "en": "Black Kitchen Cabinet",
+    "es": "Mueble de cocina negro",
+    "pt": "Armário de cozinha preto"
+  },
+  "product-4-desc": {
+    "en": "Black kitchen cabinet with 3 doors and 2 drawers",
+    "es": "Mueble de cocina negro con 3 puertas y 2 cajones",
+    "pt": "Armário de cozinha preto com 3 portas e 2 gavetas"
   }
 }

@@ -20,8 +20,8 @@ const Products = () => {
               <div key={product.id} className="h-[400px]">
                 <Card
                   id={product.id}
-                  title={product.name}
-                  description={product.description}
+                  title={translate(product.name)}
+                  description={translate(product.description)}
                   imageUrl={product.image}
                   price={product.price}
                 />

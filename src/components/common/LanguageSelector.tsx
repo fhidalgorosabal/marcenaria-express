@@ -33,7 +33,7 @@ const LanguageSelector = () => {
     <div className="relative">
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 focus:outline-none"
+        className="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-100/20 focus:outline-none"
       >
         <span className="text-xl">{getLanguageFlag(currentLanguage)}</span>
         <FiChevronDown

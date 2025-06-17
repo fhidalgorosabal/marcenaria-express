@@ -3,6 +3,7 @@ import { useCart, useTranslation } from "../../hooks";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { formatPrice } from "../../utils";
 import Button from "../../components/common/Button";
+import { Footer } from "../../components/layout";
 
 const Cart = () => {
   const { translate } = useTranslation();
@@ -87,6 +88,8 @@ const Cart = () => {
           </div>
         </div>
       )}
+
+      <Footer />
     </div>
   );
 };

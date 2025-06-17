@@ -4,6 +4,7 @@ import { formatPrice } from "../../utils";
 import { useCart, useTranslation } from "../../hooks";
 import { Button } from "../../components/common";
 import productsData from "../../data/products.json";
+import { Footer } from "../../components/layout";
 
 interface Product {
   id: number;
@@ -75,7 +76,7 @@ const ProductDetails = () => {
           <div className="aspect-square relative overflow-hidden rounded-lg shadow-lg">
             <img
               src={product.image}
-              alt={product.name}
+              alt={translate(product.name)}
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
             />
           </div>
@@ -83,10 +84,10 @@ const ProductDetails = () => {
 
         <div className="w-full md:w-3/5">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">
-            {product.name}
+            {translate(product.name)}
           </h1>
           <div className="prose max-w-none mb-8">
-            <p className="text-gray-600">{product.description}</p>
+            <p className="text-gray-600">{translate(product.description)}</p>
           </div>
           <p className="text-2xl font-semibold text-gray-800 mb-6">
             {formatPrice(product.price)}
@@ -101,6 +102,8 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };

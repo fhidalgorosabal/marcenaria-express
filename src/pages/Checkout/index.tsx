@@ -3,6 +3,7 @@ import { useTranslation } from "../../hooks";
 import { useCart } from "../../hooks";
 import { formatPrice } from "../../utils";
 import { Button } from "../../components/common";
+import { Footer } from "../../components/layout";
 
 const Checkout = () => {
   const { translate } = useTranslation();
@@ -484,6 +485,8 @@ const Checkout = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };

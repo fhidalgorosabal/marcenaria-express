@@ -483,5 +483,15 @@
     "en": "Full name as displayed on card",
     "es": "Nombre completo tal como aparece en la tarjeta",
     "pt": "Nome completo conforme consta no cartão"
+  },
+  "created-by": {
+    "en": "Created by",
+    "es": "Creado por",
+    "pt": "Criado por"
+  },
+  "powered-by": {
+    "en": "Powered by",
+    "es": "Desarrollado con",
+    "pt": "Desenvolvido com"
   }
 }

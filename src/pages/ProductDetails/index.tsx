@@ -70,41 +70,43 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 pt-24 pb-10">
-      <div className="flex flex-col md:flex-row gap-8 max-w-5xl mx-auto">
-        <div className="w-full md:w-2/5">
-          <div className="aspect-square relative overflow-hidden rounded-lg shadow-lg">
-            <img
-              src={product.image}
-              alt={translate(product.name)}
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-            />
+    <>
+      <div className="container mx-auto px-4 pt-24 pb-10">
+        <div className="flex flex-col md:flex-row gap-8 max-w-5xl mx-auto">
+          <div className="w-full md:w-2/5">
+            <div className="aspect-square relative overflow-hidden rounded-lg shadow-lg">
+              <img
+                src={product.image}
+                alt={translate(product.name)}
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
           </div>
-        </div>
 
-        <div className="w-full md:w-3/5">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">
-            {translate(product.name)}
-          </h1>
-          <div className="prose max-w-none mb-8">
-            <p className="text-gray-600">{translate(product.description)}</p>
-          </div>
-          <p className="text-2xl font-semibold text-gray-800 mb-6">
-            {formatPrice(product.price)}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button onClick={handleAddToCart}>
-              {translate("add-cart-button")}
-            </Button>
-            <Button variant="secondary" onClick={() => navigate("/products")}>
-              {translate("back-to-products")}
-            </Button>
+          <div className="w-full md:w-3/5">
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">
+              {translate(product.name)}
+            </h1>
+            <div className="prose max-w-none mb-8">
+              <p className="text-gray-600">{translate(product.description)}</p>
+            </div>
+            <p className="text-2xl font-semibold text-gray-800 mb-6">
+              {formatPrice(product.price)}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button onClick={handleAddToCart}>
+                {translate("add-cart-button")}
+              </Button>
+              <Button variant="secondary" onClick={() => navigate("/products")}>
+                {translate("back-to-products")}
+              </Button>
+            </div>
           </div>
         </div>
       </div>
 
       <Footer />
-    </div>
+    </>
   );
 };
 

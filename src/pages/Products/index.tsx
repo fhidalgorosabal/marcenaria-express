@@ -1,8 +1,8 @@
 import { ProductsDataType } from "../../types";
+import { useTranslation } from "../../hooks";
 import { Footer } from "../../components/layout";
 import Card from "../../components/common/Card";
 import productsData from "../../data/products.json";
-import { useTranslation } from "../../hooks";
 
 const Products = () => {
   const { translate } = useTranslation();

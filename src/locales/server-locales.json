@@ -348,5 +348,140 @@
     "en": "Black kitchen cabinet with 3 doors and 2 drawers",
     "es": "Mueble de cocina negro con 3 puertas y 2 cajones",
     "pt": "Armário de cozinha preto com 3 portas e 2 gavetas"
+  },
+  "checkout-title": {
+    "en": "Checkout form",
+    "es": "Formulario de pago",
+    "pt": "Formulário de pagamento"
+  },
+  "checkout-cart-title": {
+    "en": "Your cart",
+    "es": "Tu carrito",
+    "pt": "Seu carrinho"
+  },
+  "checkout-promo-code": {
+    "en": "Promo code",
+    "es": "Código promocional",
+    "pt": "Código promocional"
+  },
+  "checkout-redeem": {
+    "en": "Redeem",
+    "es": "Canjear",
+    "pt": "Resgatar"
+  },
+  "checkout-billing-title": {
+    "en": "Billing address",
+    "es": "Dirección de facturación",
+    "pt": "Endereço de faturamento"
+  },
+  "checkout-first-name": {
+    "en": "First name",
+    "es": "Nombre",
+    "pt": "Nome"
+  },
+  "checkout-last-name": {
+    "en": "Last name",
+    "es": "Apellido",
+    "pt": "Sobrenome"
+  },
+  "checkout-username": {
+    "en": "Username",
+    "es": "Nombre de usuario",
+    "pt": "Nome de usuário"
+  },
+  "checkout-email": {
+    "en": "Email (Optional)",
+    "es": "Correo electrónico (Opcional)",
+    "pt": "E-mail (Opcional)"
+  },
+  "checkout-address": {
+    "en": "Address",
+    "es": "Dirección",
+    "pt": "Endereço"
+  },
+  "checkout-address2": {
+    "en": "Address 2 (Optional)",
+    "es": "Dirección 2 (Opcional)",
+    "pt": "Endereço 2 (Opcional)"
+  },
+  "checkout-country": {
+    "en": "Country",
+    "es": "País",
+    "pt": "País"
+  },
+  "checkout-state": {
+    "en": "State",
+    "es": "Estado/Provincia",
+    "pt": "Estado/Província"
+  },
+  "checkout-zip": {
+    "en": "ZIP",
+    "es": "Código Postal",
+    "pt": "CEP"
+  },
+  "checkout-same-address": {
+    "en": "Shipping address is the same as my billing address",
+    "es": "La dirección de envío es la misma que la de facturación",
+    "pt": "O endereço de entrega é o mesmo do endereço de faturamento"
+  },
+  "checkout-save-info": {
+    "en": "Save this information for next time",
+    "es": "Guardar esta información para la próxima vez",
+    "pt": "Salvar estas informações para a próxima vez"
+  },
+  "checkout-payment-title": {
+    "en": "Payment",
+    "es": "Pago",
+    "pt": "Pagamento"
+  },
+  "checkout-pix": {
+    "en": "Pix",
+    "es": "Pix",
+    "pt": "Pix"
+  },
+  "checkout-credit-card": {
+    "en": "Credit card",
+    "es": "Tarjeta de crédito",
+    "pt": "Cartão de crédito"
+  },
+  "checkout-debit-card": {
+    "en": "Debit card",
+    "es": "Tarjeta de débito",
+    "pt": "Cartão de débito"
+  },
+  "checkout-paypal": {
+    "en": "PayPal",
+    "es": "PayPal",
+    "pt": "PayPal"
+  },
+  "checkout-card-name": {
+    "en": "Name on card",
+    "es": "Nombre en la tarjeta",
+    "pt": "Nome no cartão"
+  },
+  "checkout-card-number": {
+    "en": "Credit card number",
+    "es": "Número de tarjeta",
+    "pt": "Número do cartão"
+  },
+  "checkout-expiration": {
+    "en": "Expiration",
+    "es": "Fecha de expiración",
+    "pt": "Data de validade"
+  },
+  "checkout-cvv": {
+    "en": "CVV",
+    "es": "CVV",
+    "pt": "CVV"
+  },
+  "checkout-continue": {
+    "en": "Continue to checkout",
+    "es": "Continuar al pago",
+    "pt": "Continuar para pagamento"
+  },
+  "full-name-card": {
+    "en": "Full name as displayed on card",
+    "es": "Nombre completo tal como aparece en la tarjeta",
+    "pt": "Nome completo conforme consta no cartão"
   }
 }

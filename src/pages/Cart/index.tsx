@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useCart, useTranslation } from "../../hooks";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { formatPrice } from "../../utils";
@@ -5,12 +6,17 @@ import Button from "../../components/common/Button";
 
 const Cart = () => {
   const { translate } = useTranslation();
+  const navigate = useNavigate();
   const { cartItems, removeFromCart, updateQuantity } = useCart();
 
   const total = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
+
+  const handleBuyNowClick = () => {
+    navigate("/checkout");
+  };
 
   return (
     <div className="container mx-auto px-4 pt-24 pb-10">
@@ -75,7 +81,7 @@ const Cart = () => {
             <p className="text-xl font-bold">{`${translate(
               "total"
             )}: ${formatPrice(total)}`}</p>
-            <Button variant="primary" size="md" className="mt-4">
+            <Button size="md" className="mt-4" onClick={handleBuyNowClick}>
               {translate("buy-now")}
             </Button>
           </div>

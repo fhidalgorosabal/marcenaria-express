@@ -92,7 +92,7 @@ const ProductDetails = () => {
             {formatPrice(product.price)}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button variant="primary" onClick={handleAddToCart}>
+            <Button onClick={handleAddToCart}>
               {translate("add-cart-button")}
             </Button>
             <Button variant="secondary" onClick={() => navigate("/products")}>

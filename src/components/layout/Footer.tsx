@@ -138,7 +138,7 @@ const Footer = () => {
               required
             />
           </div>
-          <Button type="submit" variant="primary" size="lg">
+          <Button type="submit" size="lg">
             {translate("contact-form-submit")}
           </Button>
         </form>
